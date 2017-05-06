@@ -1,0 +1,83 @@
+;;; DO NOT MODIFY THIS SECTION
+         .ORIG x4000
+         .FILL HANDLE_NUM ; x4000
+         .FILL HANDLE_OP  ; x4001
+         .FILL HANDLE_END ; x4002
+         .FILL MULT       ; x4003
+         .FILL DIV        ; x4004
+         .FILL PUSH       ; x4005
+         .FILL POP        ; x4006
+RESET    .FILL x3000
+PRINTNUM .FILL x3001
+;;; DO NOT MODIFY ABOVE THIS LINE
+
+; ECE190 Machine Problem 3
+; Spring 2012
+; Name:
+; NetID:
+
+; HANDLE_NUM will be called when a number is encountered in the Reverse
+; Polish Notation expression.  The signed 2's complement number will be
+; stored in R1.
+HANDLE_NUM
+        ; put your code for the HANDLE_NUM subroutine here
+
+        RET
+    
+    
+; HANDLE_OP will be called when an operator is encountered in the Reverse
+; Polish Notation expression.  Stored in R1 will be a number which identifies
+; which operator was encountered.  0 means +; 1 means -; 2 means *; 3 means /.
+HANDLE_OP
+        ; put your code for the HANDLE_OP subroutine here
+
+        RET
+
+
+; HANDLE_END will be called when the end of the Reverse Polish Notation
+; expression is encountered.        
+HANDLE_END
+        ; put your code for the HANDLE_END subroutine here
+
+        RET
+
+
+; multiply R1*R2 and put the result in R0.
+MULT
+        ; put your code for the MULT subroutine here
+        
+        RET
+
+        
+; divide R1/R2 and put the result in R0.  on success, set R5 to 0. on fail, set R5
+; to 1.
+DIV     
+        ; put your code for the DIV subroutine here
+        
+        RET
+
+                
+; push contents of R0 onto the stack.  on success, set R5 to 0. on fail, set R5 to 1.
+PUSH    
+        ; put your code for the PUSH subroutine here
+        
+        RET
+
+        
+; pop a number off of the stack and put it into R0.  on success, set R5 to 0.
+; on fail, set R5 to 1.
+POP
+        ; put your code for the POP subroutine here
+
+        RET
+        
+
+; Feel free to move these error messages to elsewhere in the file.
+ERR1    .STRINGZ "ERR1: Stack underflow.\n"
+ERR2    .STRINGZ "ERR2: Incomplete expression.\n"
+ERR3    .STRINGZ "ERR3: Division by zero.\n"
+ERR4    .STRINGZ "ERR4: Stack overflow.\n"
+
+
+
+.END
